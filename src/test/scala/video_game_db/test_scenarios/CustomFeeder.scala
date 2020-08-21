@@ -4,16 +4,12 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 import io.gatling.core.Predef._
-import io.gatling.http.Predef._
+import video_game_db.baseConfig.BaseSimulation
 import video_game_db.requests.CommonRequests
 
 import scala.util.Random
 
-class CustomFeeder extends Simulation {
-
-  val httpConf = http.baseUrl("http://video-game-db.eu-west-2.elasticbeanstalk.com/app/")
-    .header("Accept", "application/json")
-
+class CustomFeeder extends BaseSimulation {
   var idNumbers = (999 to 1999).iterator
   val rnd = new Random()
   val now = LocalDate.now()
@@ -41,6 +37,6 @@ class CustomFeeder extends Simulation {
 
   setUp(
     scn.inject(atOnceUsers(1))
-  ).protocols(httpConf)
+  ).protocols(httpConfig)
 
 }

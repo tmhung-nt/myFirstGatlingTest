@@ -2,14 +2,10 @@ package video_game_db.test_scenarios
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import video_game_db.baseConfig.BaseSimulation
 
-class CheckResponseBodyAndExtract extends Simulation {
-
-  val httpConf = http.baseUrl("http://video-game-db.eu-west-2.elasticbeanstalk.com/app/")
-    .header("Accept", "application/json")
-
+class CheckResponseBodyAndExtract extends BaseSimulation {
   val scn = scenario("Check JSON Path")
-
     // First call - check the name of the game
       .exec(http("Get specific game")
           .get("videogames/1")
@@ -29,6 +25,6 @@ class CheckResponseBodyAndExtract extends Simulation {
 
   setUp(
     scn.inject(atOnceUsers(1))
-  ).protocols(httpConf)
+  ).protocols(httpConfig)
 
 }

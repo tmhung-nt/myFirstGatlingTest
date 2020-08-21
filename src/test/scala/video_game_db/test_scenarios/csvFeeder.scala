@@ -2,12 +2,9 @@ package video_game_db.test_scenarios
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import video_game_db.baseConfig.BaseSimulation
 
-class csvFeeder extends Simulation {
-
-  val httpConf = http.baseUrl("http://video-game-db.eu-west-2.elasticbeanstalk.com/app/")
-    .header("Accept", "application/json")
-
+class csvFeeder extends BaseSimulation {
   val csvFeeder = csv("data/gameCsvFile.csv").circular
 
   def getAllVideoGames() = {
@@ -36,6 +33,6 @@ class csvFeeder extends Simulation {
 
   setUp(
     scn.inject(atOnceUsers(1))
-  ).protocols(httpConf)
+  ).protocols(httpConfig)
 
 }

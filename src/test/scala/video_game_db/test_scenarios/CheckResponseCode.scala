@@ -2,14 +2,11 @@ package video_game_db.test_scenarios
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import video_game_db.baseConfig.BaseSimulation
 
 import scala.concurrent.duration.DurationInt
 
-class CheckResponseCode extends Simulation {
-
-  val httpConf = http.baseUrl("http://video-game-db.eu-west-2.elasticbeanstalk.com/app/")
-    .header("Accept", "application/json")
-
+class CheckResponseCode extends BaseSimulation {
   val scn = scenario("Video Game DB - 3 calls")
 
     .exec(http("Get all video games - 1st call")
@@ -29,6 +26,6 @@ class CheckResponseCode extends Simulation {
 
   setUp(
     scn.inject(atOnceUsers(1))
-  ).protocols(httpConf)
+  ).protocols(httpConfig)
 
 }
