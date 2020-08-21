@@ -1,13 +1,15 @@
+package video_game_db
+
 import io.gatling.app.Gatling
 import io.gatling.core.config.GatlingPropertiesBuilder
-import test.scala.computerdatabase.BasicSimulation
+import video_game_db.LoadSimulations._
 
 object GatlingRunner {
 
   def main(args: Array[String]): Unit = {
 
     // this is where you specify the class you want to run
-    val simClass = classOf[BasicSimulation].getName
+    val simClass = classOf[FixDurationLoadSimulation].getName
 
     val props = new GatlingPropertiesBuilder
     props.simulationClass(simClass)
