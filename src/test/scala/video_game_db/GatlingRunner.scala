@@ -9,7 +9,7 @@ object GatlingRunner {
   def main(args: Array[String]): Unit = {
 
     // this is where you specify the class you want to run
-    val simClass = classOf[FixDurationLoadSimulation].getName
+    val simClass = classOf[BaseLoadSimulation].getName
 
     val props = new GatlingPropertiesBuilder
     props.simulationClass(simClass)
