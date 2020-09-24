@@ -42,6 +42,9 @@
                 <configuration>
                     <simulationsFolder>src/test/scala/video_game_db</simulationsFolder>
                     <runMultipleSimulations>true</runMultipleSimulations>
+                    <includes>
+                        <include>test_scenarios.*</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
