@@ -1,0 +1,5 @@
+services:
+  - docker
+
+script:
+  - sudo docker run -it tmhung62/gatling-runner:latest
