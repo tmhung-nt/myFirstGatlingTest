@@ -13,6 +13,9 @@ or simply:
 
     mvn gatling:test
 
+ ## Run on AWS Fargate
+ https://medium.com/@richard.hendricksen/distributed-load-testing-with-gatling-using-docker-and-aws-d497605692db
+
 ## From Intellij IDEA, run one of following classes
 - Engine
 - Gatling Runner (need to add a particular class name first then we can run in debug mode as well)
@@ -24,7 +27,7 @@ http://video-game-db.eu-west-2.elasticbeanstalk.com/swagger-ui/index.html
 https://www.james-willett.com/debug-gatling/  
 https://www.james-willett.com/gatling-load-testing-complete-guide  
 https://maxchadwick.xyz/blog/gatling-multiplier
-
+https://www.baeldung.com/jenkins-run-gatling-tests
 
 ### Notes
 1. rampUsersPecSec Explaination
