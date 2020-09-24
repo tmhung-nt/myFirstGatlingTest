@@ -42,7 +42,7 @@ EOF
 rm -rf target/gatling/*
 
 # Run load test
-mvn gatling:test -Dgatling.simulationClass=fw.Tests
+mvn gatling:test 
 
 #Upload reports
 #for _dir in target/gatling/*/
