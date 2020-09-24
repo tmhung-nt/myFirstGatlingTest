@@ -2,3 +2,6 @@
 debug.txt
 target/
 *.iml
+.settings/
+.project
+.classpath
